@@ -1,0 +1,80 @@
+{% extends "bootstrap/base.html" %}
+{% import "bootstrap/wtf.html" as wtf %}
+
+{% block title %}
+Reserve on Restaurant
+{% endblock %}
+
+
+{% block styles %}
+{{super()}}
+<link rel="stylesheet" href="{{url_for('.static', filename='signin.css')}}">
+<link rel="stylesheet" href="{{url_for('.static', filename='dashboard.css')}}">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+<script>
+  async function main() {
+    document.querySelector('#images').innerHTML = "";
+    var type_input = document.querySelector('#ok').value;
+    let init = {
+      mode: 'cors',
+      method: 'GET'
+    }
+    let res = await fetch("/serach_type/"+type_input);
+    var n = await res.json();
+    var _s = n.photos.photo;
+    var divd = document.getElementById("#images");
+    for(var z = 0 ; z < n.photos.photo.length ; z++)
+    {
+      var CurrentPhotoUrl = 'https://farm'+_s[z]['farm']+'.staticflickr.com/'+_s[z]['server']+'/'+_s[z]['id']+'_'+_s[z]['secret']+'_n.jpg'
+      $("<img />").attr({"src": CurrentPhotoUrl,"style":"margin:40px","class":"img-thumbnail"}).appendTo("#images");
+    }
+    var br = document.createElement('br');
+    document.querySelector("#images").appendChild(br);
+    var hr = document.createElement('hr');
+    document.querySelector("#images").appendChild(hr);
+
+  }
+ </script>
+{% endblock %}
+
+{% block content %}
+<nav class="navbar navbar-inverse navbar-fixed-top"  style="background-color:yellow">
+    <div class="container-fluid">
+      <div class="navbar-header">
+        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+          <span class="sr-only">Toggle navigation</span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <a class="navbar-brand" href="{{ url_for('dashboard') }}">Reservation system</a>
+      </div>
+      <div id="navbar" class="navbar-collapse collapse">
+        <ul class="nav navbar-nav navbar-right">
+          <li><a href="{{ url_for('logout') }}">Log Out</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+<div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main">
+    <h1 class="page-header"> Hi!</h1> 
+    <h2 class="sub-header">What types of cuisine you want to search?</h2>
+    <div class="table-responsive">
+        <div class="input-group  text-center">
+            <div class="input-group-btn ">
+              <div class="input-group  text-center" >
+                <input type="text" id="ok" name= "selected_type" class="form-control" placeholder="Search type of food ex chinese"> </input>
+                <div class="input-group-btn ">
+                  <button class="btn btn-default" onclick="main()" id="button" type="submit">
+                    <i class="glyphicon glyphicon-search"></i>
+                  </button>
+                </div>
+             </div>
+      </div>
+    </div>
+  </div>
+      <div id = "images" class = "mdb-lightbox no-margin"> </div>
+</div>
+
+{% endblock %}
