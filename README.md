@@ -9,8 +9,8 @@
 4. List of Technologies/API's Used: Flickr. We used Flickr api to show the the image of the type of food.
 
 <p align="center">
-  <img align="left" src="./pictures/home.png" width="400">
-  <img align="right" src="./pictures/user_signup.png" width="400">
+  <img align="center" src="./pictures/home.png" width="400">
+  <img align="center" src="./pictures/user_signup.png" width="400">
 </p>
 
 <p align="center">
