@@ -1,18 +1,35 @@
 # Restaurant Reservation 
 
-2. Group Members Name: Kyeongtak (David) Han, Eric Hwang
+1. Group Members Name: Kyeongtak (David) Han, Eric Hwang
 
-3. Link to live Application: https://blooming-forest-51764.herokuapp.com/
+2. Link to live Application: https://blooming-forest-51764.herokuapp.com/
 
-4. Link to Github Code Repository: https://github.umn.edu/han00127/4131-Final/tree/master/Final_code
+3. Link to Github Code Repository: https://github.umn.edu/han00127/4131-Final/tree/master/Final_code
 
-5. List of Technologies/API's Used: Flickr. We used Flickr api to show the the image of the type of food.
+4. List of Technologies/API's Used: Flickr. We used Flickr api to show the the image of the type of food.
 
-6. Detailed Description of the project (No more than 500 words): 
+<p align="center">
+  <img align="center" src="./pictures/home.png" width="400">
+</p>
+
+<p align="center">
+  <img align="center" src="./pictures/user_signup.png" width="400">
+</p>
+
+<p align="center">
+  <img align="center" src="./pictures/Reservation.png" width="400">
+</p>
+
+<p align="center">
+  <img align="center" src="./pictures/Searching_food_cuisine.png" width="400">
+</p>
+
+
+5. Detailed Description of the project (No more than 500 words): 
 Our project is about a reservation system. The user can reserve the specific restaurant which registered on our application. To use our application, the user must register on our application and login as the authorized the user. 
 After log-in, there are four main functionalities in our application. First one is to show up the available restaurant list in our application. The user can see the all lists of restaurants with details. If the user clicks the name of resturant, the application will redirect the user to reservation page in order to make a reservation. The second functionality is a Reserve Restaurant. The user can reserve the restaurnat by filling up some form. The third functionality is a reservation history of the user. This function will show the record of the reservation history. When the user made a reservation on the speicific restaurants. This is the function that used the data tables to match up the corresponding user id and bring up the data to our application.
 
-7. List of Controllers and their short description (No more than 50 words for each controller)
+6. List of Controllers and their short description (No more than 50 words for each controller)
 
 @app.route('/serach_type/<type>', methods= ['GET'])
 @login_required
@@ -47,7 +64,7 @@ This is log-out controller that the user is able to log out their account in the
 @app.route('/login', methods=['GET', 'POST'])
 This is log-in controller that is opposed to the log-out route. This is the significant route call in our process. Get the user id from the application and match up the user_id and the password in the data base. If both are matched, the user is able to the dashboard to use the functionalities.
 
-8. List of Views and their short description (No more than 50 words for each view
+7. List of Views and their short description (No more than 50 words for each view
 
 avail_rest.html
 This is the view that has the home button (reservation system) to head back to the dashboard and log-out button. Also, it will show the list of available restaurants with the table formating. The name of the restaurant in the table is a clickable. If the user clicks the the name of the resturant, the user will be redirected to the reservation page.
@@ -73,7 +90,7 @@ This is the page that if the user inputs the type of the food such as chinese, k
 singup.html 
 This is the page that the user can register thier id on the system by entering some information such as user_email, their first name, last name, phone number, and password. By clicking the sign up button with valid input, the user is able to log-in the system. 
 
-9. List of Tables, their Structure and short description
+8. List of Tables, their Structure and short description
 
  User
  
@@ -110,7 +127,7 @@ FOREIGN KEY(user_id) REFERENCES User(user_id),
 FOREIGN KEY(restaurant_id) REFERENCES Restaurant(restaurant_id)
 Reservation is a relationship between the User and Restaurant containing extra information of the reservation. It will contain the reservation date, number of people that the user want to reserver, and reserve_time. This table has two primary keys (user_id, restaurant_id) and both primary key in the table will be used for foreign keys to make a relationship between the User and Restaurant.
 
-10. References/Resources: List all the references, resources or the online templates that were used for the project.
+9. References/Resources: List all the references, resources or the online templates that were used for the project.
 
 https://github.umn.edu/aljab012/4131-mashup 
 
