@@ -14,13 +14,17 @@
 </p>
 
 <p align="center">
-  <img align="center" src="./pictures/Reservation.png" width="400">
+   left - Home page, right - user_signup
 </p>
 
 <p align="center">
+  <img align="center" src="./pictures/Reservation.png" width="400">
   <img align="center" src="./pictures/Searching_food_cuisine.png" width="400">
 </p>
 
+<p align="center">
+  left - Reservation, right - Searching food by keyword
+</p>
 
 5. Detailed Description of the project (No more than 500 words): 
 Our project is about a reservation system. The user can reserve the specific restaurant which registered on our application. To use our application, the user must register on our application and login as the authorized the user. 
