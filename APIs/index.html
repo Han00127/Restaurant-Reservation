@@ -1,0 +1,61 @@
+// kyeongtak han han00127, Eric Hwang hwang241, Alhaitham Al Jabri aljab012
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title> Midterm Project </title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+    <script src = "currency.js"> </script> 
+    <script src = "image.js"></script>
+    <script src = "article.js"></script>
+    <link
+    rel="stylesheet"
+    href="https://unpkg.com/leaflet@1.4.0/dist/leaflet.css"
+    integrity="sha512-puBpdR0798OZvTTbP4A8Ix/l+A4dHDD0DGqYW6RQ+9jxkRFclaxxQb/SJAWZfWAkuyeQUytO7+7N4QKrDh+drA=="
+    crossorigin=""
+  />
+  <script
+    src="https://unpkg.com/leaflet@1.4.0/dist/leaflet.js"
+    integrity="sha512-QVftwZFqvtRNi0ZyCtsznlKSWOStnDORoefr1enyq5mVL4tmKB3S/EnC3rRJcxCPavG10IcrVGSmPh6Qw5lwrg=="
+    crossorigin=""
+  ></script>
+  <style>
+    #issMap {
+      height: 180px;
+    }
+  </style>
+</head>
+<body style="background-color: #1d1e22">
+    <div class="container text-center" >
+        <div class="page-header" style="color: #feda6a">
+            <h2>Hello there! Welcome the country search engine</h2>
+            <br>
+            <p> Note: Please make sure that google chrome does not block http APIs since one of our API is not https secure<br>
+              Currency API requires the payment for using the https API address. 
+          </p>
+          </div>     
+        <div class="input-group  text-center">
+              <input type="text" id="ok"  class="form-control" placeholder="Search country name">
+              <div class="input-group-btn ">
+                <button class="btn btn-default" onclick="mycur(); mycur1(); mycur2();logi();" id="button" type="submit">
+                  <i class="glyphicon glyphicon-search"></i>
+                </button>
+              </div>
+            </div>
+            <br>
+        <div id="curr" style="background-color: #393f4d;border-block-color:#393f4d ;color:#feda6a;" ></div>
+        <br>
+        <div id="images" class="mdb-lightbox no-margin"></div>
+        <h1 id="country"></h1>
+        <div id= "links"> </div>
+        <br>
+    </div>
+    <div id="issMap"> </div>
+    
+    <script src = "map.js"></script>
+</body>
+</html>
